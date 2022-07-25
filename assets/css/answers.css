@@ -42,6 +42,7 @@
     color: rgb(0, 166, 255);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 700;
+    font-size: 1.7em;
     text-transform: uppercase;
 }
 
@@ -83,8 +84,6 @@
     justify-content: space-evenly;
     text-align: center;
 }
-
-
 
 .answer_button,
 .predictions_button {
@@ -169,151 +168,19 @@
     border: none;
 }
 
+
 @media screen and (max-width: 360px) {
-    .menu_mob {
+    .main {
         display: flex;
+        flex-direction: column;
     }
 
-    #menu_toggle {
-        opacity: 0;
-    }
-
-    .menu_btn {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-        z-index: 2;
-    }
-
-    .menu_btn>span,
-    .menu_btn>span::before,
-    .menu_btn>span::after {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #616161;
-    }
-
-    .menu_btn>span::before {
-        content: '';
-        top: -8px;
-    }
-
-    .menu_btn>span::after {
-        content: '';
-        top: 8px;
-    }
-
-    .menu_box {
-        display: flex;
-        flex-direction: row;
-        position: fixed;
-        visibility: hidden;
-        top: 0;
-        left: -100%;
-        margin: 20px;
-        padding: 10px 0;
-        list-style: none;
-        font-size: small;
-        text-align: left;
-        background: transparent;
-        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-    }
-
-    .menu_item {
-        display: block;
-        padding: 12px 24px;
-        color: rgb(94, 121, 229);
-        font-family: 'Roboto', sans-serif;
-        font-size: 10;
-        font-weight: 600;
-        text-decoration: none;
-    }
-
-    .item_mob {
-        display: none;
-    }
-
-    .menu_item:hover {
-        background-color: #cba7e1;
-    }
-
-    #menu_toggle:checked~.menu_btn>span {
-        transform: rotate(45deg);
-    }
-
-    #menu_toggle:checked~.menu_btn>span::before {
-        top: 0;
-        transform: rotate(0);
-    }
-
-    #menu_toggle:checked~.menu_btn>span::after {
-        top: 0;
-        transform: rotate(90deg);
-    }
-
-    #menu_toggle:checked~.menu_box {
-        visibility: visible;
-        left: 0;
-    }
-
-    .menu_btn>span,
-    .menu_btn>span::before,
-    .menu_btn>span::after {
-        transition-duration: .25s;
-    }
-
-    .menu_box {
-        transition-duration: .25s;
-    }
-
-    .menu_item {
-        transition-duration: .25s;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .memory_game {
-        width: 80vw;
-        height: 85vh;
+    .joke {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
-        perspective: 1000px;
-        z-index: 1;
     }
 
-    .memory_card {
-        width: 20vw;
-        height: 10vh;
-        margin: 4px;
-        position: relative;
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-        transform: scale(1);
-        transform-style: preserve-3d;
-        transition: transform .2s;
-    }
-
-    .front_face,
-    .back_face {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        border-radius: 5px;
-        backface-visibility: hidden;
-    }
-}
-
-@media screen and (min-width: 361px) and (max-width: 499px) {
     .menu_mob {
         display: flex;
     }
@@ -341,7 +208,7 @@
         position: absolute;
         width: 100%;
         height: 2px;
-        background-color: #616161;
+        background-color: rgb(255, 255, 255);
     }
 
     .menu_btn>span::before {
@@ -373,10 +240,10 @@
     .menu_item {
         display: block;
         padding: 12px 24px;
-        color: rgb(94, 121, 229);
+        color: rgb(255, 255, 255);
         font-family: 'Roboto', sans-serif;
-        font-size: 10;
-        font-weight: 600;
+        font-size: 1em;
+        font-weight: 500;
         text-decoration: none;
     }
 
@@ -421,42 +288,88 @@
         transition-duration: .25s;
     }
 
-    .nav {
+    .joke_nav {
         display: none;
     }
 
-    .memory_game {
-        width: 75vw;
-        height: 50vh;
-        display: flex;
+    .joke_answers {
+        display: grid;
+        padding: 10px;
+        margin: 10px;
         justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        perspective: 1000px;
-        z-index: 1;
     }
 
-    .memory_card {
-        width: 20vw;
+    .answers_heiding {
+        display: grid;
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .answers_title {
+        text-align: center;
+        font-family: 'Bad Script', cursive;
+        font-size: 2em;
+        font-weight: 900;
+        margin: 10px;
+        color: rgb(0, 255, 238);
+        text-shadow: 1px 2px rgb(0, 145, 255);
+    }
+
+    .container_btn {
+        display: grid;
+        justify-content: center;
+    }
+
+    .answer_button,
+    .predictions_button {
+        padding: 7px;
+        margin: 12px;
+        width: 43vw;
         height: 10vh;
-        position: relative;
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-        transform: scale(1);
-        transform-style: preserve-3d;
-        transition: transform .2s;
+        border-radius: 10px;
+        color: rgb(118, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3em;
+        font-weight: 900;
+        background: transparent;
+        cursor: pointer;
+        box-shadow: 0 3px 20px rgb(0, 85, 255),
+            inset 0 2px 0 rgb(255, 255, 255),
+            0 2px 0 rgb(251, 0, 255),
+            inset 0 0 20px rgb(0, 255, 221);
     }
 
-    .front_face,
-    .back_face {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        border-radius: 5px;
-        backface-visibility: hidden;
+    .out {
+        padding: 3%;
+        margin: 15px;
+        color: rgb(115, 212, 239);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1em;
+        font-weight: 900;
+        text-shadow: 1px 2px rgb(60, 0, 255);
+        text-align: center;
+        width: 30vw;
+        height: 12vh;
+    }
+
+    .joke_topic {
+        display: none;
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 768px) {
+@media screen and (min-width: 361px) and (max-width: 499px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .joke {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .menu_mob {
         display: flex;
     }
@@ -484,7 +397,7 @@
         position: absolute;
         width: 100%;
         height: 2px;
-        background-color: #616161;
+        background-color: rgb(255, 255, 255);
     }
 
     .menu_btn>span::before {
@@ -498,16 +411,17 @@
     }
 
     .menu_box {
-        display: block;
+        display: flex;
+        flex-direction: row;
         position: fixed;
         visibility: hidden;
         top: 0;
         left: -100%;
-        width: 20vw;
-        margin: 0;
-        padding: 80px 0;
+        margin: 20px;
+        padding: 10px 0;
         list-style: none;
-        text-align: center;
+        font-size: large;
+        text-align: left;
         background: transparent;
         box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
     }
@@ -515,11 +429,15 @@
     .menu_item {
         display: block;
         padding: 12px 24px;
-        color: rgb(94, 121, 229);
+        color: rgb(255, 255, 255);
         font-family: 'Roboto', sans-serif;
-        font-size: 1.3em;
-        font-weight: 700;
+        font-size: 1em;
+        font-weight: 500;
         text-decoration: none;
+    }
+
+    .item_mob {
+        display: none;
     }
 
     .menu_item:hover {
@@ -559,42 +477,88 @@
         transition-duration: .25s;
     }
 
-    .nav {
+    .joke_nav {
         display: none;
     }
 
-    .memory_game {
-        width: 70vw;
-        height: 90vh;
-        display: flex;
+    .joke_answers {
+        display: grid;
+        padding: 10px;
+        margin: 10px;
         justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        perspective: 1000px;
-        z-index: 1;
     }
 
-    .memory_card {
-        width: 20vw;
-        height: 14vh;
-        position: relative;
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-        transform: scale(1);
-        transform-style: preserve-3d;
-        transition: transform .2s;
+    .answers_heiding {
+        display: grid;
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
     }
 
-    .front_face,
-    .back_face {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        border-radius: 5px;
-        backface-visibility: hidden;
+    .answers_title {
+        text-align: center;
+        font-family: 'Bad Script', cursive;
+        font-size: 2em;
+        font-weight: 900;
+        margin: 10px;
+        color: rgb(0, 255, 238);
+        text-shadow: 1px 2px rgb(0, 145, 255);
+    }
+
+    .container_btn {
+        display: grid;
+        justify-content: center;
+    }
+
+    .answer_button,
+    .predictions_button {
+        padding: 7px;
+        margin: 12px;
+        width: 43vw;
+        height: 10vh;
+        border-radius: 10px;
+        color: rgb(118, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3em;
+        font-weight: 900;
+        background: transparent;
+        cursor: pointer;
+        box-shadow: 0 3px 20px rgb(0, 85, 255),
+            inset 0 2px 0 rgb(255, 255, 255),
+            0 2px 0 rgb(251, 0, 255),
+            inset 0 0 20px rgb(0, 255, 221);
+    }
+
+    .out {
+        padding: 3%;
+        margin: 15px;
+        color: rgb(115, 212, 239);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1em;
+        font-weight: 900;
+        text-shadow: 1px 2px rgb(60, 0, 255);
+        text-align: center;
+        width: 30vw;
+        height: 12vh;
+    }
+
+    .joke_topic {
+        display: none;
     }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-width: 500px) and (max-width: 768px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .joke {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .menu_mob {
         display: flex;
     }
@@ -608,7 +572,7 @@
         align-items: center;
         position: fixed;
         top: 20px;
-        left: 10px;
+        left: 20px;
         width: 20px;
         height: 20px;
         cursor: pointer;
@@ -622,7 +586,7 @@
         position: absolute;
         width: 100%;
         height: 2px;
-        background-color: #616161;
+        background-color: rgb(255, 255, 255);
     }
 
     .menu_btn>span::before {
@@ -636,15 +600,16 @@
     }
 
     .menu_box {
-        display: block;
+        display: flex;
+        flex-direction: row;
         position: fixed;
         visibility: hidden;
         top: 0;
         left: -100%;
-        width: 20vw;
-        margin: 0;
-        padding: 80px 0;
+        margin: 20px;
+        padding: 10px 0;
         list-style: none;
+        font-size: large;
         text-align: left;
         background: transparent;
         box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
@@ -652,12 +617,16 @@
 
     .menu_item {
         display: block;
-        padding: 10px 20px;
-        color: rgb(94, 121, 229);
+        padding: 12px 24px;
+        color: rgb(255, 255, 255);
         font-family: 'Roboto', sans-serif;
-        font-size: 1.3em;
-        font-weight: 700;
+        font-size: 1em;
+        font-weight: 500;
         text-decoration: none;
+    }
+
+    .item_mob {
+        display: none;
     }
 
     .menu_item:hover {
@@ -697,37 +666,262 @@
         transition-duration: .25s;
     }
 
-    .nav {
+    .joke_nav {
         display: none;
     }
 
-    .memory_game {
-        width: 85vw;
-        height: 95vh;
+    .joke_answers {
+        display: grid;
+        padding: 10px;
+        margin: 10px;
+        justify-content: center;
+    }
+
+    .answers_heiding {
+        display: grid;
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .answers_title {
+        text-align: center;
+        font-family: 'Bad Script', cursive;
+        font-size: 2em;
+        font-weight: 900;
+        margin: 10px;
+        color: rgb(0, 255, 238);
+        text-shadow: 1px 2px rgb(0, 145, 255);
+    }
+
+    .container_btn {
+        display: grid;
+        justify-content: center;
+    }
+
+    .answer_button,
+    .predictions_button {
+        padding: 7px;
+        margin: 12px;
+        width: 43vw;
+        height: 10vh;
+        border-radius: 10px;
+        color: rgb(118, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.3em;
+        font-weight: 900;
+        background: transparent;
+        cursor: pointer;
+        box-shadow: 0 3px 20px rgb(0, 85, 255),
+            inset 0 2px 0 rgb(255, 255, 255),
+            0 2px 0 rgb(251, 0, 255),
+            inset 0 0 20px rgb(0, 255, 221);
+    }
+
+    .out {
+        padding: 3%;
+        margin: 15px;
+        color: rgb(115, 212, 239);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.2em;
+        font-weight: 900;
+        text-shadow: 1px 2px rgb(60, 0, 255);
+        text-align: center;
+        width: 30vw;
+        height: 12vh;
+    }
+
+    .joke_topic {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .joke {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-wrap: wrap;
-        perspective: 1000px;
-        z-index: 1;
     }
 
-    .memory_card {
-        width: 22vw;
-        height: 16vh;
-        position: relative;
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
-        transform: scale(1);
-        transform-style: preserve-3d;
-        transition: transform .2s;
+    .menu_mob {
+        display: flex;
     }
 
-    .front_face,
-    .back_face {
-        width: 100%;
-        height: 100%;
+    #menu_toggle {
+        opacity: 0;
+    }
+
+    .menu_btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        font-size: 2em;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        display: block;
         position: absolute;
-        border-radius: 5px;
-        backface-visibility: hidden;
+        width: 100%;
+        height: 2px;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .menu_btn>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu_btn>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .menu_box {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        margin: 20px;
+        padding: 10px 0;
+        list-style: none;
+        font-size: large;
+        text-align: left;
+        background: transparent;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+
+    .menu_item {
+        display: block;
+        padding: 12px 24px;
+        color: rgb(255, 255, 255);
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .item_mob {
+        display: none;
+    }
+
+    .menu_item:hover {
+        background-color: #cba7e1;
+    }
+
+    #menu_toggle:checked~.menu_btn>span {
+        transform: rotate(45deg);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu_toggle:checked~.menu_box {
+        visibility: visible;
+        left: 0;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        transition-duration: .25s;
+    }
+
+    .menu_box {
+        transition-duration: .25s;
+    }
+
+    .menu_item {
+        transition-duration: .25s;
+    }
+
+    .joke_nav {
+        display: none;
+    }
+
+    .joke_answers {
+        display: grid;
+        padding: 10px;
+        margin: 10px;
+        justify-content: center;
+    }
+
+    .answers_heiding {
+        display: grid;
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .answers_title {
+        text-align: center;
+        font-family: 'Bad Script', cursive;
+        font-size: 2.2em;
+        font-weight: 900;
+        margin: 10px;
+        color: rgb(0, 255, 238);
+        text-shadow: 1px 2px rgb(0, 145, 255);
+    }
+
+    .container_btn {
+        display: grid;
+        justify-content: center;
+    }
+
+    .answer_button,
+    .predictions_button {
+        padding: 7px;
+        margin: 12px;
+        width: 43vw;
+        height: 10vh;
+        border-radius: 10px;
+        color: rgb(118, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.7em;
+        font-weight: 900;
+        background: transparent;
+        cursor: pointer;
+        box-shadow: 0 3px 20px rgb(0, 85, 255),
+            inset 0 2px 0 rgb(255, 255, 255),
+            0 2px 0 rgb(251, 0, 255),
+            inset 0 0 20px rgb(0, 255, 221);
+    }
+
+    .out {
+        padding: 3%;
+        margin: 15px;
+        color: rgb(115, 212, 239);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1.5em;
+        font-weight: 900;
+        text-shadow: 1px 2px rgb(60, 0, 255);
+        text-align: center;
+        width: 30vw;
+        height: 12vh;
+    }
+
+    .joke_topic {
+        display: none;
     }
 }

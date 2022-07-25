@@ -9,6 +9,7 @@
     display: grid;
     justify-content: center;
     background: linear-gradient(to right, rgba(55, 220, 249, 0.744), rgb(55, 242, 255, 0.744), rgba(22, 255, 185, 0.745));
+    /* Opera 15+, Chrome 25+, IE 10+, Firefox 16+, Safari 6.1+, iOS 7+, Android 4.4+ */
 }
 
 .menu_mob {
