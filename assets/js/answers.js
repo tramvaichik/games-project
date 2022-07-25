@@ -25,9 +25,9 @@ function answer() {
 
 
 function predictions() {
-    document.getElementById('predictions').innerHTML = "Кофейная гуща сообщила, что: ";
+    document.getElementById('predictions').innerHTML = "Кофейная гуща: ";
 
-    let word = ["Ты станешь корлём.",
+    let word = ["Ты станешь королём.",
         "Ой, я тебе сейчас такооооое расскажу!",
         "Действуй! Но осторожно. Но лучше не надо.",
         "Котики тебе помогут.",
