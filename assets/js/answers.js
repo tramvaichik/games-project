@@ -48,19 +48,19 @@ function predictions() {
     document.getElementById('predictions').innerHTML += word[index];
 };
 
-function theme() {
-    switch (document.getElementById('dropdown').value) {
-        case "subject":
-            document.getElementById("body").style.backgroundImage = "url(./assets/images/backround.jpeg)";
-            break;
-        case "constellation":
-            document.getElementById("body").style.backgroundImage = "url(./assets/images/constelation.jpeg)";
-            break;
-        case "forest":
-            document.getElementById("body").style.backgroundImage = "url(./assets/images/forest.jpeg)";
-            break;
-        case "magic":
-            document.getElementById("body").style.backgroundImage = "url(./assets/images/magic.jpeg)";
-            break;
-    };
-};
+// function theme() {
+//     switch (document.getElementById('dropdown').value) {
+//         case "subject":
+//             document.getElementById("body").style.backgroundImage = "url(./assets/images/backround.jpeg)";
+//             break;
+//         case "constellation":
+//             document.getElementById("body").style.backgroundImage = "url(./assets/images/constelation.jpeg)";
+//             break;
+//         case "forest":
+//             document.getElementById("body").style.backgroundImage = "url(./assets/images/forest.jpeg)";
+//             break;
+//         case "magic":
+//             document.getElementById("body").style.backgroundImage = "url(./assets/images/magic.jpeg)";
+//             break;
+//     };
+// };
