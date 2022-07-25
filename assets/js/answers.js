@@ -50,9 +50,9 @@ function predictions() {
 
 function theme() {
     switch (document.getElementById('dropdown').value) {
-        case "subject":
-            document.getElementById("body").style.backgroundImage = "url(./assets/images/backround.jpeg)";
-            break;
+        // case "subject":
+        //     document.getElementById("body").style.backgroundImage = "url(./assets/images/backround.jpeg)";
+        //     break;
         case "constellation":
             document.getElementById("body").style.backgroundImage = "url(./assets/images/constelation.jpeg)";
             break;
