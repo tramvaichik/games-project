@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/answers.css">
+    <title>Answers</title>
+</head>
+
+<body class="body" id="body">
+    <main class="main">
+        <section class="joke">
+            <div class="hamburger_menu_mob">
+                <input id="menu_toggle" type="checkbox" />
+                <label class="menu_btn" for="menu_toggle">
+                    <span></span>
+                </label>
+                <ul class="menu_box">
+                    <li><a class="menu_item" href="./index.html">Memory</a></li>
+                    <li><a class="menu_item" href="#"></a>Answers</li>
+                </ul>
+            </div>
+        </section>
+        <section class="joke_nav">
+            <ul class="nav_menu">
+                <li><a class="menu_item" href="./index.html">Memory</a></li>
+                <li><a class="menu_item" href="#">Answers</a></li>
+            </ul>
+        </section>
+        <section class="joke_answers">
+            <div class="answers_heiding">
+                <h1 class="answers_title"> Шуточные ответы и смешные предсказания </h1>
+            </div>
+            <div class="container_btn">
+                <div class="answer_btn">
+                    <button class="answer_button" onclick="answer()"> Хочу ответ </button>
+                    <div class="out" id="answer"></div>
+                </div>
+                <div class="predictions_btn">
+                    <button class="predictions_button" onclick="predictions()"> Хочу предсказание </button>
+                    <div class="out" id="predictions"></div>
+                </div>
+            </div>
+        </section>
+        <section class="joke_topic">
+            <select class="dropdown" id="dropdown" onchange="theme()">
+                <option value="subject"> Фон </option>
+                <option value="constellation"> Созвездие </option>
+                <option value="forest"> Магический лес </option>
+                <option value="magic"> Магический круг </option>
+            </select>
+        </section>
+    </main>
+
+    <script src="./assets/js/answers..js"></script>
+</body>
+
+</html>

@@ -1,0 +1,664 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(55, 220, 249, 0.744), rgb(55, 242, 255, 0.744), rgba(22, 255, 185, 0.745));
+}
+
+.menu_mob {
+    display: none;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav_menu {
+    list-style-type: none;
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+}
+
+.menu_item {
+    display: inline;
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(0, 166, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.menu_item:link {
+    color: rgb(155, 61, 237);
+}
+
+.menu_item:hover {
+    text-decoration: underline;
+    color: rgb(9, 75, 26);
+    box-shadow: 4px 0 4px 0 #25816aab inset;
+}
+
+.menu_item:active {
+    color: rgb(26, 148, 129);
+    background-color: rgb(71, 210, 208);
+    box-shadow: 2px 2px 2px #510086;
+}
+
+.memory_game {
+    width: 75vw;
+    height: 84vh;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory_card {
+    width: 15vw;
+    height: 25vh;
+    margin: 4px;
+    position: relative;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .2s;
+}
+
+.front_face,
+.back_face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background: rgba(28, 204, 178, 0.786);
+    backface-visibility: hidden;
+}
+
+.front_face {
+    transform: rotateY(180deg);
+}
+
+.memory_card.flip {
+    transform: rotateY(180deg);
+}
+
+.memory_card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.memory_card.flip {
+    transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 360px) {
+    .menu_mob {
+        display: flex;
+    }
+
+    #menu_toggle {
+        opacity: 0;
+    }
+
+    .menu_btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+    }
+
+    .menu_btn>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu_btn>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .menu_box {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        margin: 20px;
+        padding: 10px 0;
+        list-style: none;
+        font-size: small;
+        text-align: left;
+        background: transparent;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+
+    .menu_item {
+        display: block;
+        padding: 12px 24px;
+        color: rgb(94, 121, 229);
+        font-family: 'Roboto', sans-serif;
+        font-size: 10;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .item_mob {
+        display: none;
+    }
+
+    .menu_item:hover {
+        background-color: #cba7e1;
+    }
+
+    #menu_toggle:checked~.menu_btn>span {
+        transform: rotate(45deg);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu_toggle:checked~.menu_box {
+        visibility: visible;
+        left: 0;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        transition-duration: .25s;
+    }
+
+    .menu_box {
+        transition-duration: .25s;
+    }
+
+    .menu_item {
+        transition-duration: .25s;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .memory_game {
+        width: 80vw;
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        perspective: 1000px;
+        z-index: 1;
+    }
+
+    .memory_card {
+        width: 20vw;
+        height: 10vh;
+        margin: 4px;
+        position: relative;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: transform .2s;
+    }
+
+    .front_face,
+    .back_face {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 5px;
+        backface-visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 361px) and (max-width: 499px) {
+    .menu_mob {
+        display: flex;
+    }
+
+    #menu_toggle {
+        opacity: 0;
+    }
+
+    .menu_btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+    }
+
+    .menu_btn>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu_btn>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .menu_box {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        margin: 20px;
+        padding: 10px 0;
+        list-style: none;
+        font-size: large;
+        text-align: left;
+        background: transparent;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+
+    .menu_item {
+        display: block;
+        padding: 12px 24px;
+        color: rgb(94, 121, 229);
+        font-family: 'Roboto', sans-serif;
+        font-size: 10;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .item_mob {
+        display: none;
+    }
+
+    .menu_item:hover {
+        background-color: #cba7e1;
+    }
+
+    #menu_toggle:checked~.menu_btn>span {
+        transform: rotate(45deg);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu_toggle:checked~.menu_box {
+        visibility: visible;
+        left: 0;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        transition-duration: .25s;
+    }
+
+    .menu_box {
+        transition-duration: .25s;
+    }
+
+    .menu_item {
+        transition-duration: .25s;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .memory_game {
+        width: 75vw;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        perspective: 1000px;
+        z-index: 1;
+    }
+
+    .memory_card {
+        width: 20vw;
+        height: 10vh;
+        position: relative;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: transform .2s;
+    }
+
+    .front_face,
+    .back_face {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 5px;
+        backface-visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 768px) {
+    .menu_mob {
+        display: flex;
+    }
+
+    #menu_toggle {
+        opacity: 0;
+    }
+
+    .menu_btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+    }
+
+    .menu_btn>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu_btn>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .menu_box {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        width: 20vw;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        text-align: center;
+        background: transparent;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+
+    .menu_item {
+        display: block;
+        padding: 12px 24px;
+        color: rgb(94, 121, 229);
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.3em;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .menu_item:hover {
+        background-color: #cba7e1;
+    }
+
+    #menu_toggle:checked~.menu_btn>span {
+        transform: rotate(45deg);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu_toggle:checked~.menu_box {
+        visibility: visible;
+        left: 0;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        transition-duration: .25s;
+    }
+
+    .menu_box {
+        transition-duration: .25s;
+    }
+
+    .menu_item {
+        transition-duration: .25s;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .memory_game {
+        width: 70vw;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        perspective: 1000px;
+        z-index: 1;
+    }
+
+    .memory_card {
+        width: 20vw;
+        height: 14vh;
+        position: relative;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: transform .2s;
+    }
+
+    .front_face,
+    .back_face {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 5px;
+        backface-visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .menu_mob {
+        display: flex;
+    }
+
+    #menu_toggle {
+        opacity: 0;
+    }
+
+    .menu_btn {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 20px;
+        left: 10px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+    }
+
+    .menu_btn>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu_btn>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .menu_box {
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: -100%;
+        width: 20vw;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        text-align: left;
+        background: transparent;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    }
+
+    .menu_item {
+        display: block;
+        padding: 10px 20px;
+        color: rgb(94, 121, 229);
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.3em;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .menu_item:hover {
+        background-color: #cba7e1;
+    }
+
+    #menu_toggle:checked~.menu_btn>span {
+        transform: rotate(45deg);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::before {
+        top: 0;
+        transform: rotate(0);
+    }
+
+    #menu_toggle:checked~.menu_btn>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu_toggle:checked~.menu_box {
+        visibility: visible;
+        left: 0;
+    }
+
+    .menu_btn>span,
+    .menu_btn>span::before,
+    .menu_btn>span::after {
+        transition-duration: .25s;
+    }
+
+    .menu_box {
+        transition-duration: .25s;
+    }
+
+    .menu_item {
+        transition-duration: .25s;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .memory_game {
+        width: 85vw;
+        height: 95vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        perspective: 1000px;
+        z-index: 1;
+    }
+
+    .memory_card {
+        width: 22vw;
+        height: 16vh;
+        position: relative;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: transform .2s;
+    }
+
+    .front_face,
+    .back_face {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 5px;
+        backface-visibility: hidden;
+    }
+}
