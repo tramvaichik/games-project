@@ -7,7 +7,7 @@
 }
 
 #body {
-    background-image: url(./assets/images/backround.jpeg);
+    background-image: url(/assets/images/backround.jpeg);
     background-size: cover;
 }
 
@@ -42,7 +42,6 @@
     color: rgb(0, 166, 255);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 700;
-    font-size: 1.7em;
     text-transform: uppercase;
 }
 
