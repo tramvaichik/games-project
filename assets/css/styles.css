@@ -243,6 +243,10 @@
         border-radius: 5px;
         backface-visibility: hidden;
     }
+
+    footer {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 361px) and (max-width: 499px) {
@@ -386,6 +390,10 @@
         border-radius: 5px;
         backface-visibility: hidden;
     }
+
+    footer {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 500px) and (max-width: 768px) {
@@ -523,6 +531,10 @@
         position: absolute;
         border-radius: 5px;
         backface-visibility: hidden;
+    }
+
+    footer {
+        display: none;
     }
 }
 
