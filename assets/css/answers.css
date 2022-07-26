@@ -9,10 +9,11 @@
 #body {
     /* background-image: url(./assets/images/background_answers.jpeg); */
     /* background-size: cover; */
+    /* background-repeat: repeat; */
     background: linear-gradient(45deg,
             rgba(0, 0, 0),
-            rgb(22, 0, 94),
-            rgb(0, 92, 141),
+            rgb(19, 0, 81),
+            rgb(0, 62, 95),
             rgb(0, 82, 66));
 }
 
@@ -141,6 +142,7 @@
         0 2px 0 rgb(251, 0, 255),
         inset 0 0 20px rgb(0, 255, 221);
 }
+
 
 .out {
     padding: 3%;
@@ -321,7 +323,7 @@
     }
 
     .container_btn {
-        display: grid;
+        display: flex;
         justify-content: center;
     }
 
@@ -512,6 +514,7 @@
     .container_btn {
         display: grid;
         justify-content: center;
+        align-items: center;
     }
 
     .answer_button,
@@ -535,7 +538,7 @@
 
     .out {
         padding: 3%;
-        margin: 15px;
+        margin: 8%;
         color: rgb(115, 212, 239);
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 1em;
