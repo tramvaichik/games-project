@@ -8,8 +8,13 @@
     height: 100vh;
     display: grid;
     justify-content: center;
-    background-image: url(/assets/images/backround1.jpeg);
-    background-size: cover;
+    background-image: url(/assets/images/background_memo.jpeg);
+    /* background: linear-gradient(45deg,
+            rgba(0, 0, 0),
+            rgb(22, 0, 94),
+            rgb(0, 92, 141),
+            rgb(0, 82, 66)); */
+    /* background-size: cover; */
 }
 
 .menu_mob {
@@ -80,7 +85,7 @@
     height: 100%;
     position: absolute;
     border-radius: 5px;
-    background: rgba(28, 204, 178, 0.786);
+    /* background: rgba(28, 204, 178, 0.786); */
     backface-visibility: hidden;
 }
 
