@@ -8,7 +8,7 @@
     height: 100vh;
     display: grid;
     justify-content: center;
-    background-image: url(/assets/images/background_memo.jpeg);
+    background-image: url(./assets/images/background_memo.jpeg);
     /* background: linear-gradient(45deg,
             rgba(0, 0, 0),
             rgb(22, 0, 94),
