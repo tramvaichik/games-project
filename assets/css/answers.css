@@ -7,8 +7,13 @@
 }
 
 #body {
-    background-image: url(./assets/images/background_answers.jpeg);
-    background-size: cover;
+    /* background-image: url(./assets/images/background_answers.jpeg); */
+    /* background-size: cover; */
+    background: linear-gradient(45deg,
+            rgba(0, 0, 0),
+            rgb(22, 0, 94),
+            rgb(0, 92, 141),
+            rgb(0, 82, 66));
 }
 
 .main {
