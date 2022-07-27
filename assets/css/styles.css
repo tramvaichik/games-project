@@ -8,12 +8,12 @@
     height: 100vh;
     display: grid;
     justify-content: center;
-    /* background-image: url(./assets/images/background_memo.jpeg); */
-    background: linear-gradient(45deg,
+    background-image: url('../images/background_memo.jpeg');
+    /* background: linear-gradient(45deg,
             rgba(0, 0, 0),
             rgb(19, 0, 81),
             rgb(0, 62, 95),
-            rgb(0, 82, 66));
+            rgb(0, 82, 66)); */
     /* background-size: cover; */
 }
 
